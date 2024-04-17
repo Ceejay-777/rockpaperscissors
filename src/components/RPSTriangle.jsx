@@ -4,7 +4,7 @@ import RPS from "./RPS";
 
 const RPSTriangle = () => {
   return (
-    <div className="w-fit h-fit flex justify-center items-center p-16">
+    <div className="w-fit h-fit mx-auto">
         <div className=" w-fit h-fit relative ">
           <div className="w-60 md:w-80">
             <img src={triangle} alt="" className="w-full h-full"/>
