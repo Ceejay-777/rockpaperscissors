@@ -27,7 +27,7 @@ The designs were created to the following widths:
 
 ### Background
 
-- Radial Gradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%)
+- Radial Gradient: hsl(214, 47%, 23%) to hsl(214, 47%, 23%)
 
 ## Fonts
 

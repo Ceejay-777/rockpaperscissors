@@ -6,4 +6,10 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;;
+}
+
+.topup {
+  /* top: calc(0% - 64px) */
+  top: -64px;
 }
