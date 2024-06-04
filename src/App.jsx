@@ -10,15 +10,7 @@ function App() {
 
   return (
     <div className="p-6">
-      {/* <RPS type={"scissors"}/>
-      <RPS type={"paper"}/>
-      <RPS type={"rock"}/> */}
-      {/* <Scoreboard /> */}
-      {/* <Rules /> */}
-      {/* <PlayAgain /> */}
-      {/* <Page1 /> */}
       <MyRoutes />
-      {/* <RPSTriangle /> */}
     </div>
   )
 }

@@ -2,11 +2,11 @@ import React, { createContext, useContext, useState } from "react";
 const player = createContext();
 
 const Context = ({ children }) => {
-  const [playerChoice, setPlayerChoice] = useState();
+  const [playerChoice, setPlayerChoice] = useState("scissors");
   const [score, setScore] = useState("")
-  const [playerhasChosen, setPlayerHasChosen] = useState(false)
+ 
   return (
-    <player.Provider value={{ playerChoice, setPlayerChoice, score, setScore, playerhasChosen, setPlayerHasChosen }}>
+    <player.Provider value={{ playerChoice, setPlayerChoice, score, setScore, }}>
       {children}
     </player.Provider>
   );

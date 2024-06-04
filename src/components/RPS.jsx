@@ -1,34 +1,42 @@
-import React, { useEffect, useState } from 'react'
-import scissors from "../assets/images/icon-scissors.svg"
-import rock from "../assets/images/icon-rock.svg"
-import paper from "../assets/images/icon-paper.svg"
-import { usePlayer } from './Context'
+import React, { useEffect, useState } from "react";
+import scissors from "../assets/images/icon-scissors.svg";
+import rock from "../assets/images/icon-rock.svg";
+import paper from "../assets/images/icon-paper.svg";
+import { usePlayer } from "./Context";
 
-const RPS = ({type, addStyles}) => {
-    const [image, setImage] = useState()
-    const [color, setColor] = useState()
-    const {playerChoice, setPlayerChoice} = usePlayer()
+const RPS = ({ type, addStyles, addClick }) => {
+  const [image, setImage] = useState();
+  const [color, setColor] = useState();
+  const { playerChoice, setPlayerChoice } = usePlayer();
 
-    useEffect(() => {
-        if (type === "scissors") {
-            setImage(scissors)
-            setColor("bg-scissorsLight");
-        } else if (type === "rock") {
-            setImage(rock)
-            setColor("bg-rockLight")
-        } else if (type === "paper") {
-            setImage(paper)
-            setColor("bg-paperLight")
-        }
-    }, [])
+  useEffect(() => {
+    if (type === "scissors") {
+      setImage(scissors);
+      setColor("bg-scissorsLight");
+    } else if (type === "rock") {
+      setImage(rock);
+      setColor("bg-rockLight");
+    } else if (type === "paper") {
+      setImage(paper);
+      setColor("bg-paperLight");
+    }
+  }, []);
 
   return (
-    <div className={`w-32 h-32 p-4 rounded-full ${color} ${addStyles} md:w-40 md:h-40 hover:scale-105`} onClick={() => setPlayerChoice(type)}>
-      <div className='w-full h-full  rounded-full bg-white flex justify-center items-center'>
-        <img src={image} alt={type}/>
+    <div
+      className={`w-[138px] h-[138px] p-4 rounded-full ${color} ${addStyles} md:w-40 md:h-40 hover:scale-105`}
+      onClick={() => {
+        setPlayerChoice(type);
+        if (addClick) {
+          addClick.forEach((addFunc) => addFunc());
+        }
+      }}
+    >
+      <div className="w-full h-full  rounded-full bg-white flex justify-center items-center">
+        <img src={image} alt={type} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RPS
+export default RPS;

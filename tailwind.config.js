@@ -10,7 +10,7 @@ export default {
     "./src/**/**/*.html",
     "./src/**/**/*.jsx",
     "./src/**/**/*.js",
-    "index.html"
+    "index.html",
   ],
   theme: {
     extend: {
@@ -30,6 +30,7 @@ export default {
         headerOutline: "hsl(217, 16%, 45%)",
         backRadMid: "hsl(214, 47%, 23%)",
         backRadOut: "hsl(214, 47%, 23%)",
+        housePickBg: "rgba(23, 37, 84, 0.5)",
       },
     },
   },
