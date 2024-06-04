@@ -14,7 +14,7 @@ const RPSTriangle = () => {
   }
 
   return (
-    <div className="w-fit h-fit mx-auto">
+    <div className="w-fit h-fit mx-auto mt-28 mb-24">
       <div className=" w-fit h-fit relative ">
         <div className="w-64 md:w-80">
           <img src={triangle} alt="" className="w-full h-full" />

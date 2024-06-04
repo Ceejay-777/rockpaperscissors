@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Scoreboard from "../components/Scoreboard";
 import RPS from "../components/RPS";
 import { usePlayer } from "../components/Context";
@@ -7,10 +7,11 @@ import { compareChoices, computerChoice } from "../computerchoice";
 import PlayAgain from "../components/PlayAgain";
 
 const Page2 = () => {
-  const { playerChoice } = usePlayer();
+  const { playerChoice, setPlayerScore, playerScore } = usePlayer();
   const [compChoice] = useState(computerChoice());
   const [showCompChoice, setShowCompChoice] = useState(false);
   const [result, setResult] = useState("");
+  const resultRef = useRef();
 
   useEffect(() => {
     let showTimeout = setTimeout(() => {
@@ -18,7 +19,13 @@ const Page2 = () => {
     }, 3000);
 
     let resultTimeout = setTimeout(() => {
-       setResult(compareChoices(playerChoice, compChoice));
+      resultRef.current = compareChoices(playerChoice, compChoice);
+      if (resultRef.current === "YOU WIN") {
+        setPlayerScore((parseInt(playerScore) + 1).toString());
+      } else if (resultRef.current === "YOU LOSE" && playerScore >= 1) {
+        setPlayerScore((parseInt(playerScore) - 1).toString());
+      }
+      setResult(resultRef.current);
     }, 4000);
 
     return () => clearInterval(showTimeout, resultTimeout);
@@ -50,8 +57,10 @@ const Page2 = () => {
         </div>
       </div>
 
-      <div>
-        <p className="text-white text-3xl text-center font-bold">{result}</p>
+      <div className="mt-12">
+        <p className="text-white text-5xl text-center font-bold mb-4">
+          {result}
+        </p>
         <PlayAgain />
       </div>
 

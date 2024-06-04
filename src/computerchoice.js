@@ -12,7 +12,6 @@ export const computerChoice = () => {
 };
 
 export const compareChoices = (playerChoice, compChoice) => {
-  console.log(playerChoice);
   if (playerChoice === compChoice) return "IT'S A DRAW";
 
   if (playerChoice === "scissors") {
