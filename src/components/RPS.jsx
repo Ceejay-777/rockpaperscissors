@@ -24,7 +24,7 @@ const RPS = ({ type, addStyles, addClick }) => {
 
   return (
     <div
-      className={`w-[138px] h-[138px] p-4 rounded-full ${color} ${addStyles} md:w-40 md:h-40 hover:scale-105`}
+      className={`w-[138px] h-[138px] p-4 md:p-6 rounded-full ${color} ${addStyles} md:w-48 md:h-48 hover:scale-105`}
       onClick={() => {
         setPlayerChoice(type);
         if (addClick) {
@@ -32,7 +32,7 @@ const RPS = ({ type, addStyles, addClick }) => {
         }
       }}
     >
-      <div className="w-full h-full  rounded-full bg-white flex justify-center items-center">
+      <div className="w-full h-full rounded-full bg-white flex justify-center items-center">
         <img src={image} alt={type} />
       </div>
     </div>

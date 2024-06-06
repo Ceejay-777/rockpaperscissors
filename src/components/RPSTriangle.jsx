@@ -14,9 +14,9 @@ const RPSTriangle = () => {
   }
 
   return (
-    <div className="w-fit h-fit mx-auto mt-28 mb-24">
+    <div className="w-fit h-fit mx-auto border-2">
       <div className=" w-fit h-fit relative ">
-        <div className="w-64 md:w-80">
+        <div className="w-64 md:w-96">
           <img src={triangle} alt="" className="w-full h-full" />
         </div>
         <div
@@ -25,7 +25,7 @@ const RPSTriangle = () => {
             handleChoice("paper");
           }}
         >
-          <RPS type={"paper"} />
+          <RPS type={"paper"} addStyles={"radial"}/>
         </div>
         <div
           className="absolute top-[-64px] right-[-32px]"

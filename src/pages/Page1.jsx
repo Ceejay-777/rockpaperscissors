@@ -8,7 +8,7 @@ const Page1 = () => {
   const {playerChoice} = usePlayer();
 
   return (
-    <div className=''>
+    <div className='h-screen flex flex-col justify-between items-center p-6 min-h-[590px]'>
         <Scoreboard />
         <RPSTriangle />
         <Rules />
