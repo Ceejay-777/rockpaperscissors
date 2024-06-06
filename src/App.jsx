@@ -1,18 +1,17 @@
-import MyRoutes from "./components/MyRoutes"
-import PlayAgain from "./components/PlayAgain"
-import RPS from "./components/RPS"
-import RPSTriangle from "./components/RPSTriangle"
-import Rules from "./components/Rules"
-import Scoreboard from "./components/Scoreboard"
-import Page1 from "./pages/Page1"
+import { usePlayer } from "./components/Context";
+import MyRoutes from "./components/MyRoutes";
+import RulesModal from "./components/RulesModal";
 
 function App() {
-
+  const {rulesOpen} = usePlayer()
   return (
-    <div className="p-6">
-      <MyRoutes />
+    <div>
+      {rulesOpen && <RulesModal />}
+      {rulesOpen || <div className="p-6">
+        <MyRoutes />
+      </div>}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

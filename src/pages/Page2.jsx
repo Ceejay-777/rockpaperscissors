@@ -5,6 +5,7 @@ import { usePlayer } from "../components/Context";
 import Rules from "../components/Rules";
 import { compareChoices, computerChoice } from "../computerchoice";
 import PlayAgain from "../components/PlayAgain";
+import RulesModal from "../components/RulesModal";
 
 const Page2 = () => {
   const { playerChoice, setPlayerScore, playerScore } = usePlayer();

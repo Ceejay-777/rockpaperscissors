@@ -8,7 +8,8 @@ const getRandomInt = (min, max) => {
 
 export const computerChoice = () => {
   let choiceIndex = getRandomInt(0, 2);
-  return choices[choiceIndex];
+  // return choices[choiceIndex];
+  return "paper"
 };
 
 export const compareChoices = (playerChoice, compChoice) => {

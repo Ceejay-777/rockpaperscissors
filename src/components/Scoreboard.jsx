@@ -7,10 +7,10 @@ const Scoreboard = () => {
 
   useEffect(() => {
     const scoreTimeout = setTimeout(() => {
-      setScore(playerScore);
+      setScore(playerScore );
     }, 1000);
 
-    console.log(playerScore)
+    console.log(score)
     return () => clearTimeout(scoreTimeout);
   }, [playerScore]);
 

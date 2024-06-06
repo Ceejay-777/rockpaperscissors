@@ -3,10 +3,11 @@ const player = createContext();
 
 const Context = ({ children }) => {
   const [playerChoice, setPlayerChoice] = useState("scissors");
-  const [playerScore, setPlayerScore] = useState(0)
+  const [playerScore, setPlayerScore] = useState("0")
+  const [rulesOpen, setRulesOpen] = useState(false)
  
   return (
-    <player.Provider value={{ playerChoice, setPlayerChoice, playerScore, setPlayerScore, }}>
+    <player.Provider value={{ playerChoice, setPlayerChoice, playerScore, setPlayerScore, rulesOpen, setRulesOpen, }}>
       {children}
     </player.Provider>
   );
