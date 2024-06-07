@@ -39,12 +39,14 @@ const Page2 = () => {
       <div className="w-full grid  grid-rows-2 grid-cols-2 md:grid-cols-3 md:grid-rows-1 max-w-[540px] md:max-w-[960px]">
         {/* <div className=" flex justify-between items-stretch w-full border-2"> */}
         <div className="flex flex-col gap-6 justify-center items-center w-fit">
-          {/* <div className="relative w-fit"> */}
-          {/* <div className="absolute  big"></div> */}
-          {/* <div className="absolute  bigger"></div> */}
-          {/* <div className="absolute  biggest"></div> */}
-          <RPS type={playerChoice || "scissors"} />
-          {/* </div> */}
+          <div className="relative w-fit">
+           {(result && result === "YOU WIN") &&<div>
+              <div className="absolute  big"></div>
+              <div className="absolute  bigger"></div>
+              <div className="absolute  biggest"></div>
+            </div>}
+            <RPS type={playerChoice || "scissors"} />
+          </div>
           <p className="text-white text-center font-semibold tracking-widest md:text-xl">
             YOU PICKED
           </p>
@@ -53,9 +55,11 @@ const Page2 = () => {
         <div className="flex flex-col gap-6 items-center justify-center w-fit ml-auto md:col-start-3">
           {showCompChoice ? (
             <div className="relative w-fit">
+            {(result && result === "YOU LOSE") && <div>
               <div className="absolute big"></div>
               <div className="absolute bigger"></div>
               <div className="absolute biggest"></div>
+            </div>}
               <RPS type={compChoice} />
             </div>
           ) : (
@@ -70,7 +74,7 @@ const Page2 = () => {
           </p>
         </div>
 
-        <div className="col-span-2 flex flex-col items-center justify-center md:col-start-2 md:col-auto md:row-start-1 md:w-full">
+        <div className="col-span-2 flex flex-col items-center justify-center md:col-start-2 md:col-auto md:row-start-1 md:w-full mt-8 md:mt-0">
           <p className="text-white text-5xl text-center font-bold mb-4 tracking-wider">
             {result}
           </p>
