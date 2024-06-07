@@ -7,11 +7,9 @@ function App() {
   return (
     <div>
       {rulesOpen && <RulesModal />}
-      {rulesOpen || (
-        <div>
-          <MyRoutes />
-        </div>
-      )}
+      <div>
+        <MyRoutes />
+      </div>
     </div>
   );
 }

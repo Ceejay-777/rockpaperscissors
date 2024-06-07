@@ -33,7 +33,7 @@ const Page2 = () => {
   }, []);
 
   return (
-    <div className="h-screen flex flex-col justify-between items-center p-6 min-h-[590px] border-2 ">
+    <div className="h-screen flex flex-col justify-between items-center p-6 min-h-[590px]">
       <Scoreboard />
 
       <div className="w-full grid  grid-rows-2 grid-cols-2 md:grid-cols-3 md:grid-rows-1 max-w-[540px] md:max-w-[960px]">
