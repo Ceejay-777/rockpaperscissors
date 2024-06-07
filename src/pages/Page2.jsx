@@ -36,18 +36,28 @@ const Page2 = () => {
     <div className="h-screen flex flex-col justify-between items-center p-6 min-h-[590px] border-2 ">
       <Scoreboard />
 
-      <div className="w-full border-2 grid border-yellow-400 grid-rows-2 grid-cols-2 md:grid-cols-3 md:grid-rows-1 max-w-[540px] md:max-w-">
+      <div className="w-full grid  grid-rows-2 grid-cols-2 md:grid-cols-3 md:grid-rows-1 max-w-[540px] md:max-w-[960px]">
         {/* <div className=" flex justify-between items-stretch w-full border-2"> */}
-        <div className="flex flex-col border gap-6 justify-center items-center w-fit">
+        <div className="flex flex-col gap-6 justify-center items-center w-fit">
+          {/* <div className="relative w-fit"> */}
+          {/* <div className="absolute  big"></div> */}
+          {/* <div className="absolute  bigger"></div> */}
+          {/* <div className="absolute  biggest"></div> */}
           <RPS type={playerChoice || "scissors"} />
-          <p className="text-white text-center font-semibold tracking-wider">
+          {/* </div> */}
+          <p className="text-white text-center font-semibold tracking-widest md:text-xl">
             YOU PICKED
           </p>
         </div>
 
-        <div className="flex flex-col gap-6 items-center justify-center border w-fit ml-auto md:col-start-3">
+        <div className="flex flex-col gap-6 items-center justify-center w-fit ml-auto md:col-start-3">
           {showCompChoice ? (
-            <RPS type={compChoice} />
+            <div className="relative w-fit">
+              <div className="absolute big"></div>
+              <div className="absolute bigger"></div>
+              <div className="absolute biggest"></div>
+              <RPS type={compChoice} />
+            </div>
           ) : (
             <div
               className={`w-28 h-28 rounded-full md:w-40 md:h-40 bg-housePickBg ${
@@ -55,12 +65,12 @@ const Page2 = () => {
               }`}
             ></div>
           )}
-          <p className="text-white text-center font-semibold tracking-wider">
+          <p className="text-white text-center font-semibold tracking-widest md:text-xl">
             THE HOUSE PICKED
           </p>
         </div>
 
-        <div className="border-2 border-red-500 col-span-2 flex flex-col items-center justify-center md:col-start-2 md:col-auto md:row-start-1 md:w-full">
+        <div className="col-span-2 flex flex-col items-center justify-center md:col-start-2 md:col-auto md:row-start-1 md:w-full">
           <p className="text-white text-5xl text-center font-bold mb-4 tracking-wider">
             {result}
           </p>

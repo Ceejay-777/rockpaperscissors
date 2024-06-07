@@ -25,7 +25,7 @@ const RPSTriangle = () => {
             handleChoice("paper");
           }}
         >
-          <RPS type={"paper"} addStyles={"radial"}/>
+          <RPS type={"paper"}/>
         </div>
         <div
           className="absolute top-[-64px] right-[-32px]"
